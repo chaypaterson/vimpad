@@ -7,7 +7,7 @@ gamepad that works with Linux and has two analogue sticks.
 
 vimpad depends on qjoypad and vim.
 
-Install: place vimpad.vim into ~/.vim/after/ and vimpad.lyt into ~/.qjoypad/.
+Install: place vimpad.vim into ~/.vim/after/ and vimpad.lyt into ~/.qjoypad3/.
 
 From within vim, call GamepadOn. To exit, call GamepadOff.
 
