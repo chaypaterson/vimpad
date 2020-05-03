@@ -44,7 +44,7 @@ Normal mode mapping:
                  |_____________|
                     Menu Pad
 
-Diagram from Linux foundation documentation by David Herman,
+Diagram from Linux foundation documentation by David Herrmann,
 https://www.kernel.org/doc/html/latest/input/gamepad.html.
 
 Insert/command-line mode mapping:
