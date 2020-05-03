@@ -1,0 +1,136 @@
+vimpad
+======
+
+vimpad is a utility for controlling vim with a Linux-compatible gamepad. It
+was developed on an X-box controller, but should be compatible with any
+gamepad that works with Linux and has two analogue sticks.
+
+vimpad depends on qjoypad and vim.
+
+Install: place vimpad.vim into ~/.vim/after/ and vimpad.lyt into ~/.qjoypad/.
+
+From within vim, call GamepadOn. To exit, call GamepadOff.
+
+TODO:
+    * Swap d and u? I feel that u is currently easier to reach and I use it
+      more often.
+    * Improve documentation.  Better diagram?
+    * Better packaging?
+    * RU currently broken. Should be pipe, |.
+
+Normal mode mapping:
+--------------------
+
+          ____________________________              __
+         / [__??__]          [__??__] \               |
+        / [__Ctrl__]        [_Shift _] \              | Front Triggers
+     __/________________________________\__         __|
+    /     d                            _   \          |
+   /      /\           __             (n)   \         |
+  /       ||       _  | /|  ___    _       _ \        | Main Pad
+ |   r<===DP===>a |;|      |Esc|  (v) -|- Bkp |       |
+  \       ||    ___          ___       _     /        |
+  /\      \/   / w \        / k \     Ent   /\      __|
+ /  \_____u__ |q   e| ____ |h   l| ________/  \       |
+|         /  \ \_p_/ /    \ \_j_/ /  \         |      | Control Sticks
+|        /    \_____/      \_____/    \        |    __|
+|       /                              \       |
+ \_____/                                \_____/
+
+     |________|______|    |______|___________|
+       D-Pad    Left       Right   Action Pad
+               Stick       Stick
+
+                 |_____________|
+                    Menu Pad
+
+Diagram from Linux foundation documentation.
+
+Insert/command-line mode mapping:
+---------------------------------
+
+In insert and command-line mode, keypad.vim defines two functions that
+remap pairs of keystrokes into individual ASCII characters available on a
+standard keyboard. To avoid complicating things, characters that already have
+an assignment on the left and right sticks can be accessed by doubling it:
+e.g. e is mapped to ee (left stick --> right). All other characters are
+accessed by a direction on one stick then a direction on a different stick.
+
+The two analogue sticks are used to enter letters, with assignments based on 
+letter frequency:
+
+e  ee
+t  eh
+a  el
+r  ej
+i  ek
+o  qh
+n  ql
+s  qj
+h  hh
+d  qk
+l  ll
+u  ph
+w  ww
+m  pl
+f  pj
+c  pk
+g  wh
+y  wl
+p  pp
+b  wj
+k  kk
+v  wk
+j  jj
+x  he
+q  qq
+z  hq
+
+Note the recurring patterns of eqpw and hljk.
+
+We have still not used up all the right stick ones: only two combinations out
+of 16. We may as well make the remaining 12 numeric:
+
+-  hp
+=  hw
+1  le
+2  lq
+3  lp
+4  lw
+5  je
+6  jq
+7  jp
+8  jw
+9  ke
+0  kq
+
+kp and kw are spare, I can't think of obvious mappings.
+
+Special keys
+
+Space ; (The Back key. It was cumbersome as a combo. ; can be accessed with
+the uu combo, or Down-Down on the D-pad.)
+
+The D-pad signals a special key:
+
+,     rr
+.     aa
+Del   dd
+`     dr
+\     ru    
+]     ar
+[     ra
+Tab   da
+PgUp  ud
+PgDn  du
+
+'     ak
+#     al
+;     uu
+
+And finally, the arrow keys:
+
+Up    rk
+Down  rh
+Left  rj
+Right rl
