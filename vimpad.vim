@@ -56,8 +56,8 @@ function RemapDpad()
     cnoremap AA >
     inoremap DR ¬
     cnoremap DR ¬
-    inoremap RU |
-    cnoremap RU |
+    inoremap RU \|
+    cnoremap RU \|
     inoremap AR }
     cnoremap AR }
     inoremap RA {
