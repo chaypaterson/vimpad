@@ -118,6 +118,8 @@ function RemapNumeric()
     cnoremap KE (
     inoremap KQ )
     cnoremap KQ )
+    inoremap kw <Space>
+    cnoremap kw <Space>
 endfunction
 
 " A linotype-like frequency mapping
